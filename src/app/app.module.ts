@@ -38,6 +38,9 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,8 @@ import {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     FlexLayoutModule,
 
@@ -79,9 +84,11 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatStepperModule
+    MatStepperModule,
+
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
